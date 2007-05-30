@@ -4,7 +4,7 @@
 Summary:	X Terminal Emulator
 Name:		terminal
 Version:	0.2.6
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPL
 URL:		http://www.xfce.org
 Source:		%{oname}-%{version}.tar.bz2 
@@ -15,7 +15,7 @@ Requires:	exo
 BuildRequires:	vte-devel >= 0.11.0
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	exo-devel
-BuildRequires:	imagemagick
+BuildRequires:	ImageMagick
 BuildRequires:	desktop-file-utils
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildrrot
 
