@@ -41,7 +41,6 @@ convert icons/48x48/stock_terminal-general.png -geometry 16x16 %{buildroot}%{_ic
 
 desktop-file-install --vendor="" \
     --add-category="GTK" \
-    --add-category="X-MandrivaLinux-TerminalEmulator" \
     --add-only-show-in="XFCE" \
     --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
@@ -61,6 +60,7 @@ rm -rf  %{buildroot}
 %files  -n %{name} -f %{oname}.lang
 %defattr(-,root,root)
 %doc README ChangeLog NEWS INSTALL COPYING AUTHORS HACKING THANKS
+%dir %{_datadir}/%{oname}
 %{_bindir}/*
 %{_datadir}/%{oname}/*
 %{_datadir}/applications/*
