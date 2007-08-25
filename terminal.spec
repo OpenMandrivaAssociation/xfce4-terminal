@@ -5,17 +5,19 @@ Summary:	X Terminal Emulator
 Name:		terminal
 Version:	0.2.6
 Release:	%mkrel 3
+Group:		Terminals
 License:	GPL
 URL:		http://www.xfce.org
-Source:		%{oname}-%{version}.tar.bz2 
-Patch:		Terminal-0.2.0-Makefile.ins-Help.patch
-Group:		Terminals
+Source0:	%{oname}-%{version}.tar.bz2 
+Patch0:		Terminal-0.2.0-Makefile.ins-Help.patch
+# (tpg) http://bugzilla.xfce.org/show_bug.cgi?id=3383
+Patch1:		CVE-2007-3770.patch
 Requires:	vte >= 0.11.0 
 Requires:	exo
 BuildRequires:	vte-devel >= 0.11.0
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	exo-devel
-BuildRequires:	ImageMagick
+BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildrrot
 
@@ -24,7 +26,8 @@ Advanced lightweight Terminal Emulator for the X windowing system.
 
 %prep
 %setup -q -n %{oname}-%{version}
-%patch -p1 
+%patch0 -p1
+%patch1 -p1
 
 %build
 %configure2_5x \
@@ -68,4 +71,4 @@ rm -rf  %{buildroot}
 %{_iconsdir}/hicolor/*/apps/*
 %{_iconsdir}/hicolor/*/stock/navigation/*.png
 %{_datadir}/pixmaps/* 
-%{_mandir}/man1/*.1*
+%{_mandir}/man1/*
