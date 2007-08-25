@@ -1,10 +1,10 @@
 %define oname Terminal
 %define iconname %{oname}.png
 
-Summary:	X Terminal Emulator
+Summary:	X Terminal emulator for Xfce environment
 Name:		terminal
 Version:	0.2.6
-Release:	%mkrel 3
+Release:	%mkrel 4
 Group:		Terminals
 License:	GPL
 URL:		http://www.xfce.org
