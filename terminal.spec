@@ -4,7 +4,7 @@
 Summary:	X Terminal emulator for Xfce environment
 Name:		terminal
 Version:	0.2.6
-Release:	%mkrel 4
+Release:	%mkrel 5
 Group:		Terminals
 License:	GPL
 URL:		http://www.xfce.org
@@ -42,7 +42,8 @@ mkdir -p %{buildroot}%{_iconsdir}/hicolor/{16x16,32x32}/apps
 convert icons/48x48/stock_terminal-general.png -geometry 32x32 %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{iconname}
 convert icons/48x48/stock_terminal-general.png -geometry 16x16 %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{iconname} 
 
-desktop-file-install --vendor="" \
+desktop-file-install \
+    --remove-category="System" \
     --add-category="GTK" \
     --add-only-show-in="XFCE" \
     --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
