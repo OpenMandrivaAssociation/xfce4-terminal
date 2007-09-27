@@ -43,7 +43,6 @@ convert icons/48x48/stock_terminal-general.png -geometry 32x32 %{buildroot}%{_ic
 convert icons/48x48/stock_terminal-general.png -geometry 16x16 %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{iconname} 
 
 desktop-file-install \
-    --remove-category="System" \
     --add-category="GTK" \
     --add-only-show-in="XFCE" \
     --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
