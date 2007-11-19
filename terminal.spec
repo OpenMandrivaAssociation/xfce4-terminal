@@ -1,28 +1,33 @@
 %define oname Terminal
 %define iconname %{oname}.png
 
-Summary:	X Terminal emulator for Xfce environment
+Summary:	X Terminal emulator for Xfce desktop environment
 Name:		terminal
 Version:	0.2.6
 Release:	%mkrel 5
 Group:		Terminals
-License:	GPL
+License:	GPLv2+
 URL:		http://www.xfce.org
 Source0:	%{oname}-%{version}.tar.bz2 
 Patch0:		Terminal-0.2.0-Makefile.ins-Help.patch
 # (tpg) http://bugzilla.xfce.org/show_bug.cgi?id=3383
 Patch1:		CVE-2007-3770.patch
-Requires:	vte >= 0.11.0 
-Requires:	exo
 BuildRequires:	vte-devel >= 0.11.0
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	exo-devel
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
+BuildRequires:	libstartup-notification-1-devel
+BuildRequires:	dbus-glib-devel
+Requires:	vte >= 0.11.0 
+Requires:	exo
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildrrot
 
 %description
-Advanced lightweight Terminal Emulator for the X windowing system.
+Terminal is a modern, lightweight, and low memory cost terminal 
+emulator with tabs and multiple windows for the Xfce desktop 
+environment. It offers full-customization for the key bindings, 
+the aspect, the colors, and more.
 
 %prep
 %setup -q -n %{oname}-%{version}
@@ -62,7 +67,7 @@ rm -rf  %{buildroot}
 
 %files  -n %{name} -f %{oname}.lang
 %defattr(-,root,root)
-%doc README ChangeLog NEWS INSTALL COPYING AUTHORS HACKING THANKS
+%doc README ChangeLog NEWS AUTHORS HACKING THANKS
 %dir %{_datadir}/%{oname}
 %{_bindir}/*
 %{_datadir}/%{oname}/*
