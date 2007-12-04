@@ -10,8 +10,8 @@ License:	GPLv2+
 URL:		http://www.xfce.org
 Source0:	%{oname}-%{version}.tar.bz2
 Patch0:		Terminal-0.2.0-Makefile.ins-Help.patch
-# (tpg) http://bugzilla.xfce.org/show_bug.cgi?id=3383
-Patch1:		CVE-2007-3770.patch
+# (saispo) take from debian terminal packages
+Patch1:         Terminal-0.2.6-dont_refresh_prefs_too_much.patch
 BuildRequires:	vte-devel >= 0.11.0
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	exo-devel
