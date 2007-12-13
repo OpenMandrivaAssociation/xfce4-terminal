@@ -1,10 +1,10 @@
 %define oname Terminal
 %define iconname %{oname}.png
 
-Summary:	X Terminal emulator for Xfce desktop environment
+Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
 Version:	0.2.8
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
@@ -32,11 +32,15 @@ the aspect, the colors, and more.
 %prep
 %setup -q -n %{oname}-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %configure2_5x \
 	--disable-static
 %make
+
+%check
+make check
 
 %install
 rm -rf %{buildroot}
