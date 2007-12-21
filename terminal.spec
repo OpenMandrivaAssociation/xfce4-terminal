@@ -21,6 +21,7 @@ BuildRequires:	libstartup-notification-1-devel
 BuildRequires:	dbus-glib-devel
 Requires:	vte >= 0.11.0
 Requires:	exo
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildrrot
 
 %description
 Terminal is a modern, lightweight, and low memory cost terminal
