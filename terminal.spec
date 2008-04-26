@@ -9,9 +9,10 @@ Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
 Source0:	%{oname}-%{version}.tar.bz2
-Patch0:		Terminal-0.2.0-Makefile.ins-Help.patch
+Patch0:		%{oname}-0.2.0-Makefile.ins-Help.patch
 # (saispo) take from debian terminal packages
-Patch1:         Terminal-0.2.6-dont_refresh_prefs_too_much.patch
+Patch1:         %{oname}-0.2.6-dont_refresh_prefs_too_much.patch
+Patch2:		03_background-activity.patch
 BuildRequires:	vte-devel >= 0.11.0
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	exo-devel
@@ -19,6 +20,7 @@ BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 BuildRequires:	libstartup-notification-1-devel
 BuildRequires:	dbus-glib-devel
+BuildRequires:	intltool
 Requires:	vte >= 0.11.0
 Requires:	exo
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildrrot
@@ -33,6 +35,7 @@ the aspect, the colors, and more.
 %setup -q -n %{oname}-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %configure2_5x \
