@@ -5,12 +5,12 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
-Version:	0.2.8.3
+Version:	0.2.10
 Release:	%mkrel 1
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
-Source0:	%{oname}-%{version}.tar.bz2
+Source0:	http://mocha.xfce.org/archive/xfce-4.6.0/src/%{oname}-%{version}.tar.bz2
 Patch0:		%{oname}-0.2.0-Makefile.ins-Help.patch
 # (saispo) take from debian terminal packages
 Patch1:         %{oname}-0.2.6-dont_refresh_prefs_too_much.patch
