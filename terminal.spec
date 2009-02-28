@@ -6,7 +6,7 @@
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
 Version:	0.2.10
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
@@ -14,7 +14,6 @@ Source0:	http://mocha.xfce.org/archive/xfce-4.6.0/src/%{oname}-%{version}.tar.bz
 Patch0:		%{oname}-0.2.0-Makefile.ins-Help.patch
 # (saispo) take from debian terminal packages
 Patch1:         %{oname}-0.2.6-dont_refresh_prefs_too_much.patch
-Patch2:		03_background-activity.patch
 BuildRequires:	vte-devel >= 0.11.0
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	exo-devel
@@ -37,7 +36,6 @@ the aspect, the colors, and more.
 %setup -q -n %{oname}-%{version}
 %patch0 -p1
 %patch1 -p1
-#%patch2 -p1
 
 %build
 %configure2_5x \
