@@ -1,5 +1,3 @@
-%define Werror_cflags %nil
-
 %define oname Terminal
 %define iconname %{oname}.png
 
