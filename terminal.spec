@@ -4,7 +4,7 @@
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
 Version:	0.2.12
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
