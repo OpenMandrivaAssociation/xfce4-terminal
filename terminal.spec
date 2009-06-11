@@ -4,7 +4,7 @@
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
 Version:	0.2.12
-Release:	%mkrel 4
+Release:	%mkrel 5
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
@@ -13,6 +13,7 @@ Patch0:		Terminal-0.2.12-bindir.patch
 # (saispo) take from debian terminal packages
 Patch1:         Terminal-0.2.6-dont_refresh_prefs_too_much.patch
 Patch2:		Terminal-0.2.12-fix_always_show_tabs.patch
+Patch3:		Terminal-0.2.12-fix_activity_on_change.patch
 BuildRequires:	vte-devel >= 0.11.0
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	exo-devel
@@ -36,6 +37,7 @@ the aspect, the colors, and more.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %configure2_5x \
