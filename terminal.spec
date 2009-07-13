@@ -10,10 +10,6 @@ License:	GPLv2+
 URL:		http://www.xfce.org
 Source0:	http://mocha.xfce.org/archive/xfce-4.6.0/src/%{oname}-%{version}.tar.bz2
 Patch0:		Terminal-0.2.12-bindir.patch
-# (saispo) take from debian terminal packages
-Patch1:         Terminal-0.2.6-dont_refresh_prefs_too_much.patch
-Patch2:		Terminal-0.2.12-fix_always_show_tabs.patch
-Patch3:		Terminal-0.2.12-fix_activity_on_change.patch
 BuildRequires:	vte-devel >= 0.17.1
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	exo-devel
@@ -35,9 +31,6 @@ the aspect, the colors, and more.
 %prep
 %setup -q -n %{oname}-%{version}
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
 
 %build
 %configure2_5x \
@@ -50,10 +43,6 @@ make check
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-
-mkdir -p %{buildroot}%{_iconsdir}/hicolor/{16x16,32x32}/apps
-convert icons/48x48/stock_terminal-general.png -geometry 32x32 %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{iconname}
-convert icons/48x48/stock_terminal-general.png -geometry 16x16 %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{iconname}
 
 desktop-file-install \
     --add-category="GTK" \
