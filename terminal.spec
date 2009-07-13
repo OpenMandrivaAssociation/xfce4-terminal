@@ -3,8 +3,8 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
-Version:	0.2.12
-Release:	%mkrel 5
+Version:	0.2.90
+Release:	%mkrel 1
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
@@ -14,7 +14,7 @@ Patch0:		Terminal-0.2.12-bindir.patch
 Patch1:         Terminal-0.2.6-dont_refresh_prefs_too_much.patch
 Patch2:		Terminal-0.2.12-fix_always_show_tabs.patch
 Patch3:		Terminal-0.2.12-fix_activity_on_change.patch
-BuildRequires:	vte-devel >= 0.11.0
+BuildRequires:	vte-devel >= 0.17.1
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	exo-devel
 BuildRequires:	imagemagick
