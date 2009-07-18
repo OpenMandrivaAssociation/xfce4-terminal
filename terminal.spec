@@ -3,12 +3,12 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
-Version:	0.2.90
+Version:	0.2.99.1
 Release:	%mkrel 1
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
-Source0:	http://mocha.xfce.org/archive/xfce-4.6.0/src/%{oname}-%{version}.tar.bz2
+Source0:	http://goodies.xfce.org/releases/terminal/%{oname}-%{version}.tar.bz2
 Patch0:		Terminal-0.2.12-bindir.patch
 BuildRequires:	vte-devel >= 0.17.1
 BuildRequires:	perl(XML::Parser)
