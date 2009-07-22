@@ -3,7 +3,7 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
-Version:	0.2.99.1
+Version:	0.4.0
 Release:	%mkrel 1
 Group:		Terminals
 License:	GPLv2+
