@@ -1,5 +1,6 @@
 %define oname Terminal
 %define iconname %{oname}.png
+%define url_ver %(echo %{version} | cut -c 1-3)
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
@@ -8,7 +9,7 @@ Release:	%mkrel 2
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
-Source0:	http://goodies.xfce.org/releases/terminal/%{oname}-%{version}.tar.bz2
+Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{oname}-%{version}.tar.bz2
 Patch0:		Terminal-0.2.12-bindir.patch
 BuildRequires:	vte-devel >= 0.17.1
 BuildRequires:	perl(XML::Parser)
