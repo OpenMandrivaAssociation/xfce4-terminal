@@ -4,7 +4,7 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
-Version:	0.4.2
+Version:	0.4.4
 Release:	%mkrel 1
 Group:		Terminals
 License:	GPLv2+
@@ -35,7 +35,8 @@ the aspect, the colors, and more.
 
 %build
 %configure2_5x \
-	--disable-static
+	--disable-static \
+	--enable-dbus
 %make
 
 %check
@@ -74,8 +75,9 @@ rm -rf  %{buildroot}
 %{_bindir}/*
 %{_datadir}/%{oname}/*
 %{_datadir}/applications/*
+%{_datadir}/gnome-control-center/default-apps/Terminal-default-apps.xml
 %{_datadir}/doc/%{oname}/*
 %{_iconsdir}/hicolor/*/apps/*
 %{_iconsdir}/hicolor/*/stock/navigation/*.png
 %{_datadir}/pixmaps/*
-%{_mandir}/man1/*
+%{_mandir}/*/*
