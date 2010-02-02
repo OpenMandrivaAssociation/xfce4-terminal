@@ -5,7 +5,7 @@
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
 Version:	0.4.4
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
@@ -52,6 +52,14 @@ desktop-file-install \
     --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 %find_lang %{oname}
+
+# (tpg) a workaround for mdvbz #57365
+%pre
+if [ $1 -gt 1 ] ; then
+    if [ -d %{_docdir}/Terminal ]; then
+	rm -rf %{_docdir}/Terminal
+    fi
+fi
 
 %if %mdkversion < 200900
 %post
