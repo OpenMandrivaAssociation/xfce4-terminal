@@ -12,6 +12,7 @@ URL:		http://www.xfce.org
 Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{oname}-%{version}.tar.bz2
 Patch0:		Terminal-0.2.12-bindir.patch
 Patch1:		Terminal-0.4.5-fix-small-mem-leak.patch
+Patch2:		Terminal-0.4.5-support-vte-0.25.91.patch
 BuildRequires:	vte-devel >= 0.17.1
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	exo-devel
@@ -34,6 +35,10 @@ the aspect, the colors, and more.
 %setup -q -n %{oname}-%{version}
 %patch0 -p1
 %patch1 -p1
+
+%if %mdkversion > 201000
+%patch2 -p1
+%endif
 
 %build
 %configure2_5x \
