@@ -4,13 +4,12 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
-Version:	0.4.5
-Release:	%mkrel 6
+Version:	0.4.6
+Release:	%mkrel 1
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
 Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{oname}-%{version}.tar.bz2
-Patch0:		Terminal-0.2.12-bindir.patch
 Patch1:		Terminal-0.4.5-fix-small-mem-leak.patch
 Patch2:		Terminal-0.4.5-support-vte-0.25.91.patch
 BuildRequires:	vte-devel >= 0.17.1
@@ -33,7 +32,6 @@ the aspect, the colors, and more.
 
 %prep
 %setup -q -n %{oname}-%{version}
-%patch0 -p1
 %patch1 -p1
 
 %if %mdkversion > 201000
