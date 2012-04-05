@@ -5,14 +5,14 @@
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		terminal
 Version:	0.4.8
-Release:	%mkrel 1
+Release:	2
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
 Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{oname}-%{version}.tar.bz2
 BuildRequires:	vte-devel >= 0.17.1
 BuildRequires:	perl(XML::Parser)
-BuildRequires:	exo-devel
+BuildRequires:	exo-devel >= 0.7.2
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 BuildRequires:	libstartup-notification-1-devel
@@ -20,7 +20,6 @@ BuildRequires:	dbus-glib-devel
 BuildRequires:	intltool
 Requires:	vte >= 0.11.0
 Requires:	exo
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildrrot
 
 %description
 Terminal is a modern, lightweight, and low memory cost terminal
@@ -41,7 +40,6 @@ the aspect, the colors, and more.
 make check
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 desktop-file-install \
@@ -49,7 +47,7 @@ desktop-file-install \
     --add-only-show-in="XFCE" \
     --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
-%find_lang %{oname}
+%find_lang %{oname} %{oname}.lang
 
 # (tpg) a workaround for mdvbz #57365
 %pre
@@ -59,23 +57,7 @@ if [ $1 -gt 1 ] ; then
     fi
 fi
 
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%update_icon_cache hicolor
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%clean_icon_cache hicolor
-%endif
-
-%clean
-rm -rf  %{buildroot}
-
 %files  -n %{name} -f %{oname}.lang
-%defattr(-,root,root)
 %doc README ChangeLog NEWS AUTHORS HACKING THANKS
 %dir %{_datadir}/%{oname}
 %{_bindir}/*
