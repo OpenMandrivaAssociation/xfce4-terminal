@@ -1,25 +1,29 @@
-%define oname Terminal
-%define iconname %{oname}.png
 %define url_ver %(echo %{version} | cut -c 1-3)
 
 Summary:	X terminal emulator for Xfce desktop environment
-Name:		terminal
-Version:	0.4.8
-Release:	4
+Name:		xfce4-terminal
+Version:	0.6.1
+Release:	1
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
-Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{oname}-%{version}.tar.bz2
-BuildRequires:	vte-devel >= 0.17.1
+Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
+BuildRequires:	pkgconfig(vte)
+BuildRequires:	pkgconfig(libxfce4ui-1)
+BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	perl(XML::Parser)
-BuildRequires:	exo-devel >= 0.7.2
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
-BuildRequires:	pkgconfig(libstartup-notification-1.0)
-BuildRequires:	dbus-glib-devel
+
 BuildRequires:	intltool
 Requires:	vte >= 0.11.0
 Requires:	exo
+Obsoletes:	Terminal <= 0.4.8
+Obsoletes:	terminal < 0.4.8
+Provides:	Terminal = %{version}
+Provides:	terminal = %{version}
+
 
 %description
 Terminal is a modern, lightweight, and low memory cost terminal
@@ -28,12 +32,13 @@ environment. It offers full-customization for the key bindings,
 the aspect, the colors, and more.
 
 %prep
-%setup -q -n %{oname}-%{version}
+%setup -q
 
 %build
 %configure2_5x \
 	--disable-static \
 	--enable-dbus
+
 %make
 
 %check
@@ -47,7 +52,7 @@ desktop-file-install \
     --add-only-show-in="XFCE" \
     --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
-%find_lang %{oname} %{oname}.lang
+%find_lang %{name} %{name}.lang
 
 # (tpg) a workaround for mdvbz #57365
 %pre
@@ -57,11 +62,11 @@ if [ $1 -gt 1 ] ; then
     fi
 fi
 
-%files  -n %{name} -f %{oname}.lang
+%files -n %{name} -f %{name}.lang
 %doc README ChangeLog NEWS AUTHORS HACKING THANKS
-%dir %{_datadir}/%{oname}
+%dir %{_datadir}/%{name}
 %{_bindir}/*
-%{_datadir}/%{oname}/*
+%{_datadir}/%{name}/*
 %{_datadir}/applications/*
 %{_datadir}/gnome-control-center/default-apps/Terminal-default-apps.xml
 %{_datadir}/doc/%{oname}/*
