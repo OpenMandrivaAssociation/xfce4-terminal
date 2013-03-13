@@ -64,7 +64,14 @@ fi
 
 %files -n %{name} -f %{name}.lang
 %doc README ChangeLog NEWS AUTHORS HACKING THANKS
-
+%dir %{_datadir}/xfce4/terminal
+%dir %{_datadir}/xfce4/terminal/colorschemes
+%{_bindir}/%{name}
+%{_datadir}/applications/xfce4-terminal.desktop
+%{_datadir}/gnome-control-center/default-apps/xfce4-terminal-default-apps.xml
+%{_mandir}/*/man1/xfce4-terminal.1.*
+%{_datadir}/xfce4/terminal/colorschemes/*.theme
+%{_datadir}/xfce4/terminal/terminal-preferences.ui
 
 
 %changelog
