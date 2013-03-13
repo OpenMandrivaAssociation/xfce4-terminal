@@ -1,0 +1,12 @@
+diff -Naur xfce4-terminal-0.6.1/terminal/terminal-gdbus.c xfce4-terminal-0.6.1.tpg/terminal/terminal-gdbus.c
+--- xfce4-terminal-0.6.1/terminal/terminal-gdbus.c	2013-01-01 12:09:30.000000000 +0000
++++ xfce4-terminal-0.6.1.tpg/terminal/terminal-gdbus.c	2013-03-13 18:35:11.857553996 +0000
+@@ -90,7 +90,7 @@
+           g_dbus_method_invocation_return_error (invocation,
+               TERMINAL_ERROR, TERMINAL_ERROR_OPTIONS,
+               error->message);
+-          g_error_free (error);
++          g_error_free (error, "%s");
+         }
+       else
+         {

@@ -8,6 +8,7 @@ Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
 Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
+Patch0:		xfce4-terminal-0.6.1-fix-format-string.patch
 BuildRequires:	pkgconfig(vte)
 BuildRequires:	pkgconfig(libxfce4ui-1)
 BuildRequires:	pkgconfig(gtk+-2.0)
@@ -15,7 +16,6 @@ BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
-
 BuildRequires:	intltool
 Requires:	vte >= 0.11.0
 Requires:	exo
@@ -33,11 +33,11 @@ the aspect, the colors, and more.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
 %configure2_5x \
-	--disable-static \
-	--enable-dbus
+	--disable-static
 
 %make
 
