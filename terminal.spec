@@ -64,16 +64,7 @@ fi
 
 %files -n %{name} -f %{name}.lang
 %doc README ChangeLog NEWS AUTHORS HACKING THANKS
-%dir %{_datadir}/%{name}
-%{_bindir}/*
-%{_datadir}/%{name}/*
-%{_datadir}/applications/*
-%{_datadir}/gnome-control-center/default-apps/Terminal-default-apps.xml
-%{_datadir}/doc/%{oname}/*
-%{_iconsdir}/hicolor/*/apps/*
-%{_iconsdir}/hicolor/*/stock/navigation/*.png
-%{_datadir}/pixmaps/*
-%{_mandir}/*/*
+
 
 
 %changelog
