@@ -2,7 +2,7 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		xfce4-terminal
-Version:	0.6.1
+Version:	0.6.2
 Release:	1
 Group:		Terminals
 License:	GPLv2+
