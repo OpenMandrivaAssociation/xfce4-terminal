@@ -23,7 +23,6 @@ Obsoletes:	terminal < 0.4.8
 Provides:	Terminal = %{version}
 Provides:	terminal = %{version}
 
-
 %description
 Terminal is a modern, lightweight, and low memory cost terminal
 emulator with tabs and multiple windows for the Xfce desktop
