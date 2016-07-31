@@ -1,22 +1,23 @@
 %define url_ver %(echo %{version} | cut -c 1-3)
+%define _disable_rebuild_configure 1
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		xfce4-terminal
-Version:	0.6.3
-Release:	3
+Version:	0.6.90
+Release:	1
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
 Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
-BuildRequires:	pkgconfig(vte)
-BuildRequires:	pkgconfig(libxfce4ui-1) >= 4.11
-BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	pkgconfig(vte-2.91)
+BuildRequires:	pkgconfig(libxfce4ui-2) >= 4.11
+BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
-Requires:	vte >= 0.11.0
+Requires:	vte2.91
 Requires:	exo
 Obsoletes:	Terminal <= 0.4.8
 Obsoletes:	terminal < 0.4.8
