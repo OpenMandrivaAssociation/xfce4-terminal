@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   xfce4-terminal-0.6.90.tar.bz2: 79f1fdadb1a1d7a723cd054dee8307b8fb2eab83
+sources:
+  xfce4-terminal-0.8.7.3.tar.bz2: 73dd5edb6b338e9f3408844e910af15554d46560

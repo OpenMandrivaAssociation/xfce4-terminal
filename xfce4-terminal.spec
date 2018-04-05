@@ -1,9 +1,9 @@
-%define url_ver %(echo %{version} | cut -c 1-3)
+%define url_ver %(echo %{version} | cut -d. -f 1,2)
 %define _disable_rebuild_configure 1
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		xfce4-terminal
-Version:	0.6.90
+Version:	0.8.7.3
 Release:	1
 Group:		Terminals
 License:	GPLv2+
@@ -68,6 +68,5 @@ fi
 %{_datadir}/applications/xfce4-terminal.desktop
 %{_datadir}/gnome-control-center/default-apps/xfce4-terminal-default-apps.xml
 %{_mandir}/man1/xfce4-terminal.1.*
-%{_mandir}/*/man1/xfce4-terminal.1.*
 %{_datadir}/xfce4/terminal/colorschemes/*.theme
 %{_datadir}/xfce4/terminal/terminal-preferences.ui
