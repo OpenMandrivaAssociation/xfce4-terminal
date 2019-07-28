@@ -3,7 +3,7 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		xfce4-terminal
-Version:	0.8.7.3
+Version:	0.8.8
 Release:	1
 Group:		Terminals
 License:	GPLv2+
@@ -37,13 +37,13 @@ the aspect, the colors, and more.
 %configure2_5x \
 	--disable-static
 
-%make
+%make_build
 
 %check
 make check
 
 %install
-%makeinstall_std
+%make_install
 
 desktop-file-install \
     --add-category="GTK" \
