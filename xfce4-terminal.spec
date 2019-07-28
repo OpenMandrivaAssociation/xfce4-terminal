@@ -3,7 +3,7 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		xfce4-terminal
-Version:	0.8.7.3
+Version:	0.8.8
 Release:	1
 Group:		Terminals
 License:	GPLv2+
@@ -17,7 +17,7 @@ BuildRequires:	perl(XML::Parser)
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
-Requires:	vte2.91
+Requires:	vte3
 Requires:	exo
 Obsoletes:	Terminal <= 0.4.8
 Obsoletes:	terminal < 0.4.8
@@ -37,18 +37,22 @@ the aspect, the colors, and more.
 %configure2_5x \
 	--disable-static
 
-%make
+%make_build
 
 %check
 make check
 
 %install
-%makeinstall_std
+%make_install
 
-desktop-file-install \
-    --add-category="GTK" \
-    --add-only-show-in="XFCE" \
-    --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
+desktop-file-edit \
+	--add-category="GTK" \
+		%{buildroot}%{_datadir}/applications/%{name}.desktop
+
+desktop-file-edit \
+	--remove-key="NotShowIn" \
+	--add-only-show-in="XFCE" \
+		%{buildroot}%{_datadir}/applications/%{name}-settings.desktop
 
 %find_lang %{name} %{name}.lang
 
@@ -66,6 +70,7 @@ fi
 %dir %{_datadir}/xfce4/terminal/colorschemes
 %{_bindir}/%{name}
 %{_datadir}/applications/xfce4-terminal.desktop
+%{_datadir}/applications/%{name}-settings.desktop
 %{_datadir}/gnome-control-center/default-apps/xfce4-terminal-default-apps.xml
 %{_mandir}/man1/xfce4-terminal.1.*
 %{_datadir}/xfce4/terminal/colorschemes/*.theme
