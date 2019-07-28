@@ -17,7 +17,7 @@ BuildRequires:	perl(XML::Parser)
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
-Requires:	vte2.91
+Requires:	vte3
 Requires:	exo
 Obsoletes:	Terminal <= 0.4.8
 Obsoletes:	terminal < 0.4.8
