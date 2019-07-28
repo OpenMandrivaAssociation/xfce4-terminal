@@ -45,10 +45,14 @@ make check
 %install
 %make_install
 
-desktop-file-install \
-    --add-category="GTK" \
-    --add-only-show-in="XFCE" \
-    --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
+desktop-file-edit \
+	--add-category="GTK" \
+		%{buildroot}%{_datadir}/applications/%{name}.desktop
+
+desktop-file-edit \
+	--remove-key="NotShowIn" \
+	--add-only-show-in="XFCE" \
+		%{buildroot}%{_datadir}/applications/%{name}-settings.desktop
 
 %find_lang %{name} %{name}.lang
 
