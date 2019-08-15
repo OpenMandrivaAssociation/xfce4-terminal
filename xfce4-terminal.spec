@@ -10,7 +10,7 @@ License:	GPLv2+
 URL:		http://www.xfce.org
 Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(vte-2.91)
-BuildRequires:	pkgconfig(libxfce4ui-2) >= 4.11
+BuildRequires:	pkgconfig(libxfce4ui-2)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	perl(XML::Parser)
@@ -34,13 +34,10 @@ the aspect, the colors, and more.
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static
 
 %make_build
-
-%check
-make check
 
 %install
 %make_install
