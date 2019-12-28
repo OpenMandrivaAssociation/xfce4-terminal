@@ -3,8 +3,8 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		xfce4-terminal
-Version:	0.8.8
-Release:	2
+Version:	0.8.9.1
+Release:	1
 Group:		Terminals
 License:	GPLv2+
 URL:		http://www.xfce.org
@@ -13,6 +13,7 @@ BuildRequires:	pkgconfig(vte-2.91)
 BuildRequires:	pkgconfig(libxfce4ui-2)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gio-2.0)
+BuildRequires:  pkgconfig(libpcre2-posix)
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
