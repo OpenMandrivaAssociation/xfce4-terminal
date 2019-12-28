@@ -13,6 +13,7 @@ BuildRequires:	pkgconfig(vte-2.91)
 BuildRequires:	pkgconfig(libxfce4ui-2)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gio-2.0)
+BuildRequires:  pkgconfig(libpcre2-posix)
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
