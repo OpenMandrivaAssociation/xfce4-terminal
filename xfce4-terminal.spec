@@ -72,3 +72,6 @@ fi
 %{_mandir}/man1/xfce4-terminal.1.*
 %{_datadir}/xfce4/terminal/colorschemes/*.theme
 #{_datadir}/xfce4/terminal/terminal-preferences.ui
+%{_iconsdir}/hicolor/*x*/apps/org.xfce.terminal*
+%{_iconsdir}/icolor/scalable/apps/org.xfce.terminal-settings.svg
+%{_iconsdir}/hicolor/scalable/apps/org.xfce.terminal.svg
