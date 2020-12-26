@@ -71,4 +71,4 @@ fi
 %{_datadir}/gnome-control-center/default-apps/xfce4-terminal-default-apps.xml
 %{_mandir}/man1/xfce4-terminal.1.*
 %{_datadir}/xfce4/terminal/colorschemes/*.theme
-%{_datadir}/xfce4/terminal/terminal-preferences.ui
+#{_datadir}/xfce4/terminal/terminal-preferences.ui
