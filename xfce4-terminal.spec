@@ -3,7 +3,7 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		xfce4-terminal
-Version:	0.8.9.2
+Version:	0.8.10
 Release:	1
 Group:		Terminals
 License:	GPLv2+
@@ -15,7 +15,6 @@ BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(libpcre2-posix)
 BuildRequires:	perl(XML::Parser)
-BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 Requires:	vte3
@@ -63,7 +62,7 @@ if [ $1 -gt 1 ] ; then
 fi
 
 %files -n %{name} -f %{name}.lang
-%doc README ChangeLog NEWS AUTHORS HACKING THANKS
+%doc README* ChangeLog NEWS AUTHORS HACKING THANKS
 %dir %{_datadir}/xfce4/terminal
 %dir %{_datadir}/xfce4/terminal/colorschemes
 %{_bindir}/%{name}
