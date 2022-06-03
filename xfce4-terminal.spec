@@ -48,7 +48,6 @@ desktop-file-edit \
 
 desktop-file-edit \
 	--remove-key="NotShowIn" \
-	--add-only-show-in="XFCE" \
 		%{buildroot}%{_datadir}/applications/%{name}-settings.desktop
 
 %find_lang %{name} %{name}.lang
