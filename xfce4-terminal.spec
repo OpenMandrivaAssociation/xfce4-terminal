@@ -3,7 +3,7 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		xfce4-terminal
-Version:	0.9.1
+Version:	1.0.4
 Release:	1
 Group:		Terminals
 License:	GPLv2+
@@ -48,7 +48,6 @@ desktop-file-edit \
 
 desktop-file-edit \
 	--remove-key="NotShowIn" \
-	--add-only-show-in="XFCE" \
 		%{buildroot}%{_datadir}/applications/%{name}-settings.desktop
 
 %find_lang %{name} %{name}.lang
