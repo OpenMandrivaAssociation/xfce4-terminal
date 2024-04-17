@@ -3,12 +3,12 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		xfce4-terminal
-Version:	1.1.2
+Version:	1.1.3
 Release:	1
 Group:		Terminals
 License:	GPLv2+
-URL:		http://www.xfce.org
-Source0:	http://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
+URL:		https://www.xfce.org
+Source0:	https://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(vte-2.91)
 BuildRequires:	pkgconfig(libxfce4ui-2)
 BuildRequires:	pkgconfig(gtk+-3.0)
