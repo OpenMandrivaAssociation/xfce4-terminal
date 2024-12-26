@@ -3,7 +3,7 @@
 
 Summary:	X terminal emulator for Xfce desktop environment
 Name:		xfce4-terminal
-Version:	1.1.3
+Version:	1.1.4
 Release:	1
 Group:		Terminals
 License:	GPLv2+
@@ -31,7 +31,7 @@ environment. It offers full-customization for the key bindings,
 the aspect, the colors, and more.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure \
