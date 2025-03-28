@@ -16,6 +16,7 @@ BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(gtk-layer-shell-0)
 BuildRequires:  pkgconfig(libpcre2-posix)
+BuildRequires:	utempter-devel
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
