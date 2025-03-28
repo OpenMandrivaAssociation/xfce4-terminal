@@ -9,10 +9,12 @@ Group:		Terminals
 License:	GPLv2+
 URL:		https://www.xfce.org
 Source0:	https://archive.xfce.org/src/apps/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
+BuildRequires:	meson
 BuildRequires:	pkgconfig(vte-2.91)
 BuildRequires:	pkgconfig(libxfce4ui-2)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gio-2.0)
+BuildRequires:	pkgconfig(gtk-layer-shell-0)
 BuildRequires:  pkgconfig(libpcre2-posix)
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	desktop-file-utils
@@ -34,13 +36,15 @@ the aspect, the colors, and more.
 %autosetup -p1
 
 %build
-%configure \
-	--disable-static
+%meson \
+	-Dx11=enabled \
+ 	-Dwayland=enabled \
+  	-Dgtk-layer-shell=enabled
 
-%make_build
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 desktop-file-edit \
 	--add-category="GTK" \
