@@ -66,7 +66,7 @@ if [ $1 -gt 1 ] ; then
 fi
 
 %files -n %{name} -f %{name}.lang
-%doc README* ChangeLog NEWS AUTHORS HACKING THANKS
+%doc README* NEWS AUTHORS HACKING THANKS
 %dir %{_datadir}/xfce4/terminal
 %dir %{_datadir}/xfce4/terminal/colorschemes
 %{_bindir}/%{name}
